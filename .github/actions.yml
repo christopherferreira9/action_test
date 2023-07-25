@@ -1,0 +1,26 @@
+name: Deployment
+
+on: workflow_dispatch
+
+jobs:
+  deployment1:
+    runs-on: ubuntu-latest
+    environment:
+      name: app1
+      runs-on: ubuntu-latest
+      steps:
+        - id: build-publish
+          uses: bitovi/github-actions-react-to-ghp@v1.2.0
+          with:
+            path: app1/build # change to your build folder
+
+  deployment2:
+    runs-on: ubuntu-latest
+    environment:
+      name: app2
+      runs-on: ubuntu-latest
+      steps:
+        - id: build-publish
+          uses: bitovi/github-actions-react-to-ghp@v1.2.0
+          with:
+            path: app2/build # change to your build folder
