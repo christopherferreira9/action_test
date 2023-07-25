@@ -7,6 +7,9 @@ jobs:
     environment:
       name: app1
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app1
     steps:
       - id: build-publish
         uses: bitovi/github-actions-react-to-ghp@v1.2.0
@@ -17,6 +20,9 @@ jobs:
     environment:
       name: app2
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app2
     steps:
       - id: build-publish
         uses: bitovi/github-actions-react-to-ghp@v1.2.0
