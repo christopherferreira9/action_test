@@ -6,7 +6,6 @@ jobs:
   deployment1:
     environment:
       name: app1
-      url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - id: build-publish
@@ -17,7 +16,6 @@ jobs:
   deployment2:
     environment:
       name: app2
-      url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - id: build-publish
