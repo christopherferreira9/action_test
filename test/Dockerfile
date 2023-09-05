@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install WebDriver.io and its dependencies
-RUN npm install
+RUN yarn install
 
 # Copy your WebDriver.io test suite files and configuration
 COPY . .

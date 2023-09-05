@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the application code to the container
 COPY . .
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Define the command to start the React app
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
