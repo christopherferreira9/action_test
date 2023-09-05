@@ -1,30 +1,35 @@
-name: Deployment
+name: End-to-End Tests
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  deployment1:
-    environment:
-      name: app1
+  e2e-tests:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: app1
-    steps:
-      - id: build-publish
-        uses: bitovi/github-actions-react-to-ghp@v1.2.0
-        with:
-          path: app1/build # change to your build folder
 
-  deployment2:
-    environment:
-      name: app2
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: app2
+    services:
+      - name: react-app
+        alias: react-app
+        dockerfile: packages/app1/Dockerfile
+      - name: nextjs-app
+        alias: nextjs-app
+        dockerfile: packages/app2/Dockerfile
     steps:
-      - id: build-publish
-        uses: bitovi/github-actions-react-to-ghp@v1.2.0
-        with:
-          path: app2/build # change to your build folder
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build and Start Containers
+        working-directory: packages
+        run: docker-compose up -d
+
+      - name: Wait for Apps to Start
+        run: sleep 30
+
+      - name: Run WebDriver.io Tests
+        working-directory: test
+        run: docker build -t webdriverio-tests . && docker run --network container:nextjs-app --network container:react-app webdriverio-tests
+
+      - name: Stop and Remove Containers
+        run: docker-compose down

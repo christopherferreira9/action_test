@@ -1,0 +1,13 @@
+2023-09-05T10:05:32.994Z INFO @wdio/cli:launcher: Run onPrepare hook
+2023-09-05T10:05:32.995Z INFO @wdio/utils: Setting up browser driver for: chrome@stable
+2023-09-05T10:05:32.997Z INFO @wdio/utils: Setting up browser binaries for: chrome@stable
+2023-09-05T10:05:33.126Z INFO webdriver: Downloading Chromedriver v116.0.5845.140
+2023-09-05T10:05:33.459Z WARN webdriver: Couldn't download Chromedriver v116.0.5845.140: Download failed: server returned code 404. URL: https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.140/mac-x64/chromedriver-mac-x64.zip, trying to find known good version...
+2023-09-05T10:05:33.511Z INFO @wdio/cli:launcher: Run onWorkerStart hook
+2023-09-05T10:05:33.513Z INFO @wdio/local-runner: Start worker 0-0 with arg: run,wdio.local.conf.ts
+2023-09-05T10:05:33.516Z DEBUG @wdio/local-runner: Send command run to worker with cid "0-0"
+2023-09-05T10:05:40.494Z DEBUG @wdio/local-runner: Runner 0-0 finished with exit code 0
+2023-09-05T10:05:40.496Z INFO @wdio/cli:launcher: Run onWorkerEnd hook
+2023-09-05T10:05:40.497Z INFO @wdio/cli:launcher: Run onComplete hook
+2023-09-05T10:05:40.520Z INFO @wdio/local-runner: Shutting down spawned worker
+2023-09-05T10:05:40.772Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully

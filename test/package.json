@@ -1,0 +1,31 @@
+{
+  "name": "action_test",
+  "version": "1.0.0",
+  "author": "Chris",
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "type": "module",
+  "keywords": [
+    "webdriver",
+    "webdriverio",
+    "jasmine",
+    "e2e",
+    "selenium",
+    "test"
+  ],
+  "scripts": {
+    "test:local": "wdio run wdio.local.conf.ts"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^4.3.5",
+    "@wdio/cli": "^8.14.6",
+    "@wdio/globals": "^8.14.6",
+    "@wdio/jasmine-framework": "^8.14.6",
+    "@wdio/local-runner": "^8.14.6",
+    "@wdio/spec-reporter": "^8.14.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webdriverio": "^8.14.6"
+  }
+}

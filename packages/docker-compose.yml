@@ -1,0 +1,13 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: ./app1
+    ports:
+      - '3000:3000'
+
+  nextjs-app:
+    build:
+      context: ./app2
+    ports:
+      - '3334:3334'

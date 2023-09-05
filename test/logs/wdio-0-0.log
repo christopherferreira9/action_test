@@ -1,0 +1,63 @@
+2023-09-05T10:05:34.948Z INFO @wdio/local-runner: Run worker command: run
+2023-09-05T10:05:35.070Z DEBUG @wdio/runner: init remote session
+2023-09-05T10:05:35.221Z DEBUG @wdio/runner: init remote session
+2023-09-05T10:05:35.223Z INFO webdriver: Initiate new session using the WebDriver protocol
+2023-09-05T10:05:35.305Z INFO webdriver: Downloading Chromedriver v116.0.5845.140
+2023-09-05T10:05:35.578Z WARN webdriver: Couldn't download Chromedriver v116.0.5845.140: Download failed: server returned code 404. URL: https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.140/mac-x64/chromedriver-mac-x64.zip, trying to find known good version...
+2023-09-05T10:05:36.669Z INFO @wdio/utils: Started Chromedriver v116.0.5845.140 with params --port=57342 --allowed-origins=* --allowed-ips=0.0.0.0 in 1445ms on port 57342
+2023-09-05T10:05:36.704Z INFO webdriver: [POST] http://0.0.0.0:57342/session
+2023-09-05T10:05:36.704Z INFO webdriver: DATA {
+  capabilities: {
+    alwaysMatch: { browserName: 'chrome', 'goog:chromeOptions': [Object] },
+    firstMatch: [ {} ]
+  },
+  desiredCapabilities: {
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+      binary: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+      args: [Array]
+    }
+  }
+}
+2023-09-05T10:05:37.680Z INFO webdriver: COMMAND navigateTo("http://localhost:3334/")
+2023-09-05T10:05:37.682Z INFO webdriver: [POST] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/url
+2023-09-05T10:05:37.683Z INFO webdriver: DATA { url: 'http://localhost:3334/' }
+2023-09-05T10:05:39.023Z INFO webdriver: RESULT null
+2023-09-05T10:05:39.025Z INFO webdriver: COMMAND findElement("css selector", "#testDapp2ID")
+2023-09-05T10:05:39.026Z INFO webdriver: [POST] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/element
+2023-09-05T10:05:39.027Z INFO webdriver: DATA { using: 'css selector', value: '#testDapp2ID' }
+2023-09-05T10:05:39.753Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '81F527BA5DB5411D1603B1DEB1FED61D_element_3'
+}
+2023-09-05T10:05:39.761Z INFO webdriver: COMMAND getElementText("81F527BA5DB5411D1603B1DEB1FED61D_element_3")
+2023-09-05T10:05:39.763Z INFO webdriver: [GET] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/element/81F527BA5DB5411D1603B1DEB1FED61D_element_3/text
+2023-09-05T10:05:39.850Z INFO webdriver: RESULT TEST DAPP 2
+2023-09-05T10:05:39.857Z INFO webdriver: COMMAND navigateTo("http://localhost:3000/")
+2023-09-05T10:05:39.859Z INFO webdriver: [POST] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/url
+2023-09-05T10:05:39.859Z INFO webdriver: DATA { url: 'http://localhost:3000/' }
+2023-09-05T10:05:40.190Z INFO webdriver: RESULT null
+2023-09-05T10:05:40.192Z INFO webdriver: COMMAND findElement("css selector", "#testDapp1ID")
+2023-09-05T10:05:40.192Z INFO webdriver: [POST] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/element
+2023-09-05T10:05:40.192Z INFO webdriver: DATA { using: 'css selector', value: '#testDapp1ID' }
+2023-09-05T10:05:40.220Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '51138134BE7C1401AF13A18AD200762E_element_5'
+}
+2023-09-05T10:05:40.226Z INFO webdriver: COMMAND getElementText("51138134BE7C1401AF13A18AD200762E_element_5")
+2023-09-05T10:05:40.228Z INFO webdriver: [GET] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/element/51138134BE7C1401AF13A18AD200762E_element_5/text
+2023-09-05T10:05:40.279Z INFO webdriver: RESULT TEST DAPP 1
+2023-09-05T10:05:40.283Z INFO webdriver: COMMAND getLogTypes()
+2023-09-05T10:05:40.284Z INFO webdriver: [GET] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/se/log/types
+2023-09-05T10:05:40.290Z INFO webdriver: RESULT [ 'browser', 'driver' ]
+2023-09-05T10:05:40.290Z DEBUG @wdio/runner: Fetching logs for browser, driver
+2023-09-05T10:05:40.291Z INFO webdriver: COMMAND getLogs("driver")
+2023-09-05T10:05:40.291Z INFO webdriver: COMMAND getLogs("browser")
+2023-09-05T10:05:40.291Z INFO webdriver: [POST] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/se/log
+2023-09-05T10:05:40.291Z INFO webdriver: DATA { type: 'driver' }
+2023-09-05T10:05:40.292Z INFO webdriver: [POST] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694/se/log
+2023-09-05T10:05:40.292Z INFO webdriver: DATA { type: 'browser' }
+2023-09-05T10:05:40.303Z INFO webdriver: RESULT []
+2023-09-05T10:05:40.307Z INFO webdriver: RESULT []
+2023-09-05T10:05:40.308Z INFO webdriver: COMMAND deleteSession()
+2023-09-05T10:05:40.309Z INFO webdriver: [DELETE] http://0.0.0.0:57342/session/88b602b23b146e7e9f28eeb84c2ef694
+2023-09-05T10:05:40.370Z INFO webdriver: RESULT null
+2023-09-05T10:05:40.370Z INFO webdriver: Kill /var/folders/h6/b1zvc53515n6d3lq6zjm2slh0000gn/T/chromedriver/mac-116.0.5845.96/chromedriver-mac-x64/chromedriver driver process with command line: --port=57342 --allowed-origins=* --allowed-ips=0.0.0.0
