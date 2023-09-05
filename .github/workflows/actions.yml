@@ -10,26 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      - name: react-app
-        alias: react-app
-        dockerfile: packages/app1/Dockerfile
-      - name: nextjs-app
-        alias: nextjs-app
-        dockerfile: packages/app2/Dockerfile
+      react-app:
+        image: react-app-image-name:latest
+        ports:
+          - 3000/tcp
+        options:
+          --name react-app
+          --workdir /packages/app1
+
+      nextjs-app:
+        image: nextjs-app-image-name:latest
+        ports:
+          - 3000/tcp
+        options:
+          --name nextjs-app
+          --workdir /packages/app2
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Build and Start Containers
-        working-directory: packages
-        run: docker-compose up -d
 
       - name: Wait for Apps to Start
         run: sleep 30
 
       - name: Run WebDriver.io Tests
         working-directory: test
-        run: docker build -t webdriverio-tests . && docker run --network container:nextjs-app --network container:react-app webdriverio-tests
+        run: |
+          docker build -t webdriverio-tests
+          docker run --network container:nextjs-app --network container:react-app webdriverio-tests
 
       - name: Stop and Remove Containers
-        run: docker-compose down
+        run: |
+          docker stop nextjs-app
+          docker stop react-app
