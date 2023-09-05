@@ -8,28 +8,29 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-
-    services:
-      react-app:
-        image: react-app-image-name:latest
-        ports:
-          - 3000/tcp
-        options:
-          --name react-app
-          --workdir /packages/app1
-
-      nextjs-app:
-        image: nextjs-app-image-name:latest
-        ports:
-          - 3000/tcp
-        options:
-          --name nextjs-app
-          --workdir /packages/app2
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      # Build Docker Images
+      - name: Build React Docker Image
+        working-directory: ${{ github.workspace }}/packages/app1
+        run: |
+          docker build -t react-app-image-name:latest .
+      - name: Build Nextjs Docker Image
+        working-directory: ${{ github.workspace }}/packages/app2
+        run: |
+          docker build -t nextjs-app-image-name:latest .
+
+      # Run Docker Containers
+      - name: Run React Docker Container
+        run: |
+          docker run -d -p 3000:3000 --name react-app react-app-image-name:latest
+      - name: Run Next Docker Container
+        run: |
+          docker run -d -p 3334:3334 --name nextjs-app nextjs-app-image-name:latest
+
+      # Run Tests
       - name: Wait for Apps to Start
         run: sleep 30
 
