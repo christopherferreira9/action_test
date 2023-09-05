@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM ianwalter/puppeteer:latest
+FROM node:18
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -9,6 +9,8 @@ COPY package*.json ./
 
 # Install WebDriver.io and its dependencies
 RUN yarn install
+
+RUN yarn global add webdriverio
 
 # Copy your WebDriver.io test suite files and configuration
 COPY . .
