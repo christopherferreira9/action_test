@@ -38,11 +38,15 @@ jobs:
       - name: Wait for Apps to Start
         run: sleep 30
 
+      - name: Install Dependencies
+        working-directory: test
+        run: | 
+          yarn install
+          yarn global add webdriverio
+
       - name: Run WebDriver.io Tests
         working-directory: test
-        run: |
-          docker build -t webdriverio-tests .
-          docker run --network e2e-tests webdriverio-tests
+        run: yarn test:local
 
       - name: Stop and Remove Containers
         run: |
