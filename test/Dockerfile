@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Define the command to run your WebDriver.io tests
-CMD ["yarn", "test:local""]
+CMD ["yarn", "test:local"]
